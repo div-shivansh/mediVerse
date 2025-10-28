@@ -51,7 +51,7 @@ export default function DoctorSignUp() {
           <MoveLeft /> Back
         </button>
         <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Doctor Registration</h2>
-        <p className="text-center text-gray-600 mb-10 text-lg">Join India's most trusted telemedicine platform</p>
+        <p className="text-center text-gray-600 mb-10 text-lg">Join India&apos;s most trusted telemedicine platform</p>
         
         <form>
           {/* Medical License Number - First and Most Important */}
@@ -166,7 +166,7 @@ export default function DoctorSignUp() {
                 placeholder="+91 98765 43210" 
                 required 
               />
-              <div className="text-sm text-gray-500 mt-2">We'll verify with your registered phone number</div>
+              <div className="text-sm text-gray-500 mt-2">We&apos;ll verify with your registered phone number</div>
             </div>
             
             <div className="mb-6">

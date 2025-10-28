@@ -87,7 +87,7 @@ export default function PatientLogin() {
         </div>
         
         <div className="text-center mt-8">
-          <p className="text-gray-600 mb-2">Don't have an account?</p>
+          <p className="text-gray-600 mb-2">Don&apos;t have an account?</p>
           <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300">
             Create Patient Account
           </button>

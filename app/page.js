@@ -10,7 +10,7 @@ export default function Home() {
       
       <div className="container mx-auto px-5 relative z-[2]">
         <h2 className="text-6xl mb-6 font-extrabold text-white leading-tight drop-shadow-md">
-          Transform Your Health Journey with <span className="text-teal-400">India's Most Trusted</span> Telemedicine Platform
+          Transform Your Health Journey with <span className="text-teal-400">India&apos;s Most Trusted</span> Telemedicine Platform
         </h2>
         <p className="text-2xl mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-sm">
           Connect with 8000+ NMC-verified doctors across 60+ specializations. Book consultations in 12+ Indian languages, get instant prescriptions, and manage your health digitally - all from the comfort of your home.
@@ -103,7 +103,7 @@ export default function Home() {
             How It Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get quality healthcare in 5 simple steps - it's that easy!
+            Get quality healthcare in 5 simple steps - it&apos;s that easy!
           </p>
         </div>
         

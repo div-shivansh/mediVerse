@@ -42,7 +42,7 @@ export default function DoctorLogin() {
               placeholder="Enter your phone number" 
               required 
             />
-            <div className="text-sm text-gray-500 mt-2">We'll verify with your registered phone number</div>
+            <div className="text-sm text-gray-500 mt-2">We&apos;ll verify with your registered phone number</div>
           </div>
           
           <div className="flex justify-between mb-5">

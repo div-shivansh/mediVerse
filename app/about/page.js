@@ -13,7 +13,7 @@ export default function About() {
             About MediVerse
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-95 leading-relaxed">
-            India's premier telemedicine platform dedicated to bridging the healthcare gap between urban medical expertise and rural communities.
+            India&apos;s premier telemedicine platform dedicated to bridging the healthcare gap between urban medical expertise and rural communities.
           </p>
           <div className="inline-flex items-center bg-white/20 backdrop-blur-md rounded-full py-3 px-8 border border-white/30">
             <i className="fas fa-heart text-red-400 mr-3 text-lg"></i>
@@ -60,7 +60,7 @@ export default function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From a college project to India's most trusted telemedicine platform
+            From a college project to India&apos;s most trusted telemedicine platform
           </p>
         </div>
         

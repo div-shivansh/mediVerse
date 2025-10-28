@@ -58,7 +58,7 @@ export default function DoctorDashboard() {
             </div>
             <span className="text-2xl font-bold text-gray-800">8</span>
           </div>
-          <h3 className="text-gray-600 text-sm mb-2">Today's Appointments</h3>
+          <h3 className="text-gray-600 text-sm mb-2">Today&apos;s Appointments</h3>
           <div className="text-xs text-green-600 font-medium">
             <i className="fas fa-arrow-up mr-1"></i>+12% from yesterday
           </div>
@@ -97,7 +97,7 @@ export default function DoctorDashboard() {
             </div>
             <span className="text-2xl font-bold text-gray-800">₹24,500</span>
           </div>
-          <h3 className="text-gray-600 text-sm mb-2">This Month's Earnings</h3>
+          <h3 className="text-gray-600 text-sm mb-2">This Month&apos;s Earnings</h3>
           <div className="text-xs text-green-600 font-medium">
             <i className="fas fa-arrow-up mr-1"></i>+15% from last month
           </div>
@@ -109,7 +109,7 @@ export default function DoctorDashboard() {
         <div className="lg:col-span-2">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-bold text-gray-800">Today's Schedule</h3>
+              <h3 className="text-xl font-bold text-gray-800">Today&apos;s Schedule</h3>
               <button className="text-blue-600 hover:text-blue-700 font-medium">
                 <i className="fas fa-calendar-alt mr-2"></i>View All
               </button>

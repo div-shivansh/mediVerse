@@ -20,7 +20,7 @@ export default function Selection() {
             <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full flex items-center justify-center mx-auto mb-5">
               <User size={50} />
             </div>
-            <h3 className="text-2xl text-gray-800 mb-4 font-bold">I'm a Patient</h3>
+            <h3 className="text-2xl text-gray-800 mb-4 font-bold">I&apos;m a Patient</h3>
             <p className="text-gray-600 mb-5 leading-relaxed">Book consultations with verified doctors, manage health records, and get quality medical care from anywhere.</p>
             <div className="mt-5">
                 <Link href="/patient-signup">
@@ -35,7 +35,7 @@ export default function Selection() {
             <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full flex items-center justify-center mx-auto mb-5">
               <GraduationCap size={50} />
             </div>
-            <h3 className="text-2xl text-gray-800 mb-4 font-bold">I'm a Doctor</h3>
+            <h3 className="text-2xl text-gray-800 mb-4 font-bold">I&apos;m a Doctor</h3>
             <p className="text-gray-600 mb-5 leading-relaxed">Join our network of verified doctors and provide quality healthcare to patients across India online.</p>
             <div className="mt-5">
                 <Link href="/doctor-signup">
