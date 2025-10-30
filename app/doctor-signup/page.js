@@ -1,12 +1,16 @@
 'use client'
 import {React, useState} from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { MoveLeft } from "lucide-react";
 
 const languages = [ "Hindi", "English", "Tamil", "Telugu", "Kannada", "Malayalam", "Gujarati", "Marathi", "Bengali", "Punjabi", "Odia", "Assamese"];
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 export default function DoctorSignUp() {
+
+  const router = useRouter()
+
   const [license, setLicense] = useState("")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -41,7 +45,32 @@ export default function DoctorSignUp() {
     }
   }
 
-  console.log(availability)
+  const submit = async (e) => {
+    e.preventDefault()
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      license, name, email, degree, specialization, experience, fees, phone, location, affiliation, spokenLanguage, availability, bio
+    })
+
+    const requstOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    const response = await fetch("/api/docregister", requstOptions)
+    const result = await response.json()
+    if (result.success) {
+      alert("Doctor registered successfully")
+      router.push("/doctor-login")
+    } else {
+      alert("Error: " + result.message)
+    }
+
+  }
 
     return (
   <div className="block min-h-screen">
@@ -53,7 +82,7 @@ export default function DoctorSignUp() {
         <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Doctor Registration</h2>
         <p className="text-center text-gray-600 mb-10 text-lg">Join India&apos;s most trusted telemedicine platform</p>
         
-        <form>
+        <form onSubmit={submit}>
           {/* Medical License Number - First and Most Important */}
           <div className="mb-6">
             <label className="block mb-2 font-semibold text-gray-800">Medical License Number *</label>
@@ -240,12 +269,9 @@ export default function DoctorSignUp() {
               I agree to the <a href="#" className="text-blue-600">Terms & Conditions</a> and <a href="#" className="text-blue-600">Privacy Policy</a>
             </label>
           </div>
-          
-          <Link href="/doctor-dashboard">
           <button type="submit" className="py-5 px-9 border-none rounded-xl cursor-pointer font-semibold transition-all duration-300 no-underline inline-flex items-center justify-center gap-2 text-lg relative overflow-hidden bg-gradient-to-r from-blue-500 to-green-400 text-white shadow-md hover:-translate-y-1 hover:shadow-xl w-full">
             <i className="fas fa-user-plus"></i> Register & Verify with NMC
           </button>
-          </Link>
         </form>
         
         <div className="text-center mt-5">

@@ -1,10 +1,13 @@
 'use client'
 import { React, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { MoveLeft } from "lucide-react";
+import { MoveLeft, UserPlus } from "lucide-react";
 
 
 export default function PatientSignUp() {
+
+  const router = useRouter()
 
   const [name, setName] = useState("")
   const [age, setAge] = useState("")
@@ -15,6 +18,33 @@ export default function PatientSignUp() {
   const [medical, setMedical] = useState("")
   const [password, setPassword] = useState("")
   const [confPassword, setConfPassword] = useState("")
+
+  const submit = async (e) => {
+    e.preventDefault()
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      name, age, email, phone, gender, city, medical, password
+    })
+
+    const requstOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    const response = await fetch("/api/patientregister", requstOptions)
+    const result = await response.json()
+    if (result.success) {
+      alert("Patient registered successfully")
+      router.push("/patient-login")
+    } else {
+      alert("Error: " + result.message)
+    }
+
+  }
 
 
     return (
@@ -27,11 +57,11 @@ export default function PatientSignUp() {
         <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Patient Sign Up</h2>
         <p className="text-center text-gray-600 mb-10 text-lg">Create your account to book consultations</p>
         
-        <form>
+        <form onSubmit= {submit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="mb-6">
               <label className="block mb-2 font-semibold text-gray-800">Full Name <span className="text-red-500">&#42;</span></label>
-              <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="w-full py-3.5 px-4 border-2 border-gray-200 rounded-lg text-base transition-all duration-300 bg-white focus:outline-none focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(30,64,175,0.1)]" placeholder="Enter your full name" />
+              <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="w-full py-3.5 px-4 border-2 border-gray-200 rounded-lg text-base transition-all duration-300 bg-white focus:outline-none focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(30,64,175,0.1)]" placeholder="Enter your full name" required />
             </div>
             
             <div className="mb-6">
@@ -93,11 +123,9 @@ export default function PatientSignUp() {
             </label>
           </div>
           
-          <Link href="/patient-dashboard">
           <button type="submit" className="py-5 px-9 border-none rounded-xl cursor-pointer font-semibold transition-all duration-300 no-underline inline-flex items-center justify-center gap-2 text-lg relative overflow-hidden bg-gradient-to-r from-blue-600 to-teal-500 text-white shadow-md hover:-translate-y-1 hover:shadow-xl w-full">
-            <i className="fas fa-user-plus"></i> Create Patient Account
+            <UserPlus /> Create Patient Account
           </button>
-          </Link>
         </form>
         
         <div className="text-center mt-5">
