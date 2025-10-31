@@ -19,15 +19,15 @@ const Navbar = () => {
           <Link href="/#trust" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
             Features
           </Link>
-          <a href="/#how-it-works" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
+          <Link href="/#how-it-works" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
             How It Works
-          </a>
-          <a href="/#stats" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
+          </Link>
+          <Link href="/#stats" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
             Statistics
-          </a>
-          <a href="/#testimonials" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
+          </Link>
+          <Link href="/#testimonials" className="text-gray-600 no-underline py-2.5 px-4 rounded-lg transition-all duration-300 font-medium relative overflow-hidden hover:text-blue-600 hover:bg-blue-600/5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:transform before:-translate-x-1/2 before:transition-all before:duration-300 hover:before:w-4/5">
             Reviews
-          </a>
+          </Link>
           <Link href="/about">
           <button className="py-3 px-6 border-none rounded-xl cursor-pointer font-semibold transition-all duration-300 no-underline inline-flex items-center gap-2 text-sm relative overflow-hidden bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:-translate-y-0.5">
             About Us
