@@ -9,9 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^3.11.1",
+    "bcryptjs": "^3.0.2",
     "lucide-react": "^0.548.0",
+    "mongodb": "^6.20.0",
     "mongoose": "^8.19.2",
     "next": "15.5.5",
+    "next-auth": "^4.24.13",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

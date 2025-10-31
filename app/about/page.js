@@ -1,10 +1,12 @@
+import { Award, BriefcaseMedical, ClipboardCheck, Clock, Globe2, Globe2Icon, Handshake, Laptop, Lightbulb, MailCheck, Map, MapPinMinus, MapPinned, Medal, Phone, Rocket, ShieldCheck, Smartphone, Star, Stethoscope, Tablet, TabletSmartphone, ThumbsUp, Trophy, User, Users, Webcam } from "lucide-react";
 import React from "react";
+import Image from "next/image";
 
 export default function About() {
     return (
   <div className="block min-h-screen bg-white">
     {/* Hero Section */}
-    <section className="bg-gradient-to-br from-blue-600/95 to-teal-500/95 text-white py-20 relative overflow-hidden">
+    <section className="bg-gradient-to-br mt-20 from-blue-600/95 to-teal-500/95 text-white py-20 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
       
       <div className="max-w-6xl mx-auto px-5 relative z-10">
@@ -46,8 +48,7 @@ export default function About() {
             </div>
           </div>
           <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-2xl">
-            <div className="w-full h-64 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center">
-              <i className="fas fa-hospital-alt text-6xl text-blue-600"></i>
+            <div className="w-full h-64 rounded-xl flex items-center justify-center bg-[url('/about-poster.jpg')]">
             </div>
           </div>
         </div>
@@ -67,8 +68,8 @@ export default function About() {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-lightbulb text-white text-2xl"></i>
+              <div className="w-16 h-16 bg-gradient-to-r text-white from-blue-600 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Lightbulb size={32}/>
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3">The Idea</h3>
               <p className="text-gray-600">
@@ -76,8 +77,8 @@ export default function About() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-rocket text-white text-2xl"></i>
+              <div className="w-16 h-16 bg-gradient-to-r text-white from-teal-500 to-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Rocket size={32} />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3">The Journey</h3>
               <p className="text-gray-600">
@@ -85,8 +86,8 @@ export default function About() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-trophy text-white text-2xl"></i>
+              <div className="w-16 h-16 bg-gradient-to-r text-white from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Trophy size={32} />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-3">The Impact</h3>
               <p className="text-gray-600">
@@ -110,38 +111,38 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
-              <i className="fas fa-globe-asia text-white text-2xl"></i>
+            <div className="w-16 h-16 bg-gradient-to-r text-white from-blue-600 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
+              <Globe2 size={32} />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-4">🌏 India-First Design</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> 12+ Indian Languages</li>
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> Cultural Sensitivity</li>
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> Local Understanding</li>
+            <ul className="space-y-2 text-gray-600 pl-5">
+              <li className="flex items-center"> 12+ Indian Languages</li>
+              <li className="flex items-center"> Cultural Sensitivity</li>
+              <li className="flex items-center"> Local Understanding</li>
             </ul>
           </div>
 
           <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-2xl border border-teal-200 hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-green-400 rounded-2xl flex items-center justify-center mb-6">
-              <i className="fas fa-certificate text-white text-2xl"></i>
+            <div className="w-16 h-16 bg-gradient-to-r text-white from-teal-500 to-green-400 rounded-2xl flex items-center justify-center mb-6">
+              <ThumbsUp />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-4">✅ Quality Assurance</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> NMC Verification</li>
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> Multi-System Medicine</li>
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> Continuous Monitoring</li>
+            <ul className="space-y-2 text-gray-600 pl-5">
+              <li className="flex items-center"> NMC Verification</li>
+              <li className="flex items-center"> Multi-System Medicine</li>
+              <li className="flex items-center"> Continuous Monitoring</li>
             </ul>
           </div>
 
           <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl border border-green-200 hover:shadow-lg transition-all duration-300">
-            <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
-              <i className="fas fa-shield-alt text-white text-2xl"></i>
+            <div className="w-16 h-16 bg-gradient-to-r text-white from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+              <ShieldCheck size={32} />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-4">🔒 Security & Privacy</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> End-to-End Encryption</li>
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> HIPAA Compliance</li>
-              <li className="flex items-center"><i className="fas fa-check text-green-500 mr-2"></i> Privacy First</li>
+            <ul className="space-y-2 text-gray-600 pl-5">
+              <li className="flex items-center"> End-to-End Encryption</li>
+              <li className="flex items-center"> HIPAA Compliance</li>
+              <li className="flex items-center"> Privacy First</li>
             </ul>
           </div>
         </div>
@@ -162,8 +163,8 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-8 flex items-center">
-              <i className="fas fa-map-marked-alt mr-3 text-3xl"></i>
+            <h3 className="text-2xl font-bold mb-8 flex items-center gap-5">
+              <MapPinned />
               Transforming Rural Healthcare
             </h3>
             <div className="grid grid-cols-2 gap-6">
@@ -187,14 +188,14 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-8 flex items-center">
-              <i className="fas fa-user-md mr-3 text-3xl"></i>
+            <h3 className="text-2xl font-bold gap-5 mb-8 flex items-center">
+              <BriefcaseMedical />
               Empowering Healthcare Professionals
             </h3>
             <div className="space-y-4">
               <div className="flex items-center bg-white/10 rounded-xl p-4 backdrop-blur-md">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                  <i className="fas fa-users text-xl"></i>
+                  <Users />
                 </div>
                 <div>
                   <div className="text-2xl font-bold">8,000+</div>
@@ -203,7 +204,7 @@ export default function About() {
               </div>
               <div className="flex items-center bg-white/10 rounded-xl p-4 backdrop-blur-md">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                  <i className="fas fa-stethoscope text-xl"></i>
+                  <Stethoscope />
                 </div>
                 <div>
                   <div className="text-2xl font-bold">60+</div>
@@ -212,7 +213,7 @@ export default function About() {
               </div>
               <div className="flex items-center bg-white/10 rounded-xl p-4 backdrop-blur-md">
                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
-                  <i className="fas fa-clock text-xl"></i>
+                  <Clock />
                 </div>
                 <div>
                   <div className="text-2xl font-bold">24/7</div>
@@ -238,25 +239,25 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              icon: "fas fa-handshake",
+              icon: <Handshake size={32} />,
               title: "Accessibility",
               description: "Healthcare should be a fundamental right, not a privilege. We make quality care accessible to every Indian.",
               color: "from-blue-500 to-blue-600"
             },
             {
-              icon: "fas fa-lightbulb",
+              icon: <Lightbulb size={32} />,
               title: "Innovation",
               description: "We continuously innovate to improve healthcare delivery with cutting-edge technology and human compassion.",
               color: "from-teal-500 to-teal-600"
             },
             {
-              icon: "fas fa-star",
+              icon: <Star size={32} />,
               title: "Excellence",
               description: "We maintain the highest standards in everything from doctor verification to platform security and patient care.",
               color: "from-green-500 to-green-600"
             },
             {
-              icon: "fas fa-link",
+              icon: <Webcam size={32} />,
               title: "Connection",
               description: "We believe in human connection, bringing together patients and doctors, urban expertise and rural needs.",
               color: "from-purple-500 to-purple-600"
@@ -264,7 +265,7 @@ export default function About() {
           ].map((value, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-2xl flex items-center justify-center mb-6 mx-auto`}>
-                <i className={`${value.icon} text-white text-2xl`}></i>
+                <span className="text-white">{value.icon}</span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">{value.title}</h3>
               <p className="text-gray-600 text-center leading-relaxed">{value.description}</p>
@@ -329,24 +330,24 @@ export default function About() {
 
           <div className="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-2xl">
             <div className="text-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-teal-500 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-mobile-alt text-white text-4xl"></i>
+              <div className="w-32 h-32 bg-gradient-to-br text-white from-blue-500 to-teal-500 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <TabletSmartphone size={60} />
               </div>
               <h4 className="text-2xl font-bold text-gray-800 mb-4">Multi-Platform Access</h4>
               <p className="text-gray-600 mb-6">
                 Access MediVerse seamlessly across smartphones, tablets, and computers with synchronized data and consistent experience.
               </p>
               <div className="grid grid-cols-3 gap-4">
-                <div className="text-center">
-                  <i className="fas fa-mobile-alt text-3xl text-blue-600 mb-2"></i>
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <Smartphone size={60} />
                   <div className="text-sm text-gray-600">Mobile</div>
                 </div>
-                <div className="text-center">
-                  <i className="fas fa-tablet-alt text-3xl text-teal-600 mb-2"></i>
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <Tablet size={60} />
                   <div className="text-sm text-gray-600">Tablet</div>
                 </div>
-                <div className="text-center">
-                  <i className="fas fa-desktop text-3xl text-green-600 mb-2"></i>
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <Laptop size={60} />
                   <div className="text-sm text-gray-600">Desktop</div>
                 </div>
               </div>
@@ -369,29 +370,29 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              icon: "fas fa-trophy",
+              icon: <Trophy />,
               title: "Best Telemedicine Platform 2024",
               org: "Healthcare Innovation Awards"
             },
             {
-              icon: "fas fa-award",
+              icon: <Award />,
               title: "Rural Healthcare Champion",
               org: "Digital India Awards"
             },
             {
-              icon: "fas fa-medal",
+              icon: <Medal />,
               title: "Top Healthcare Startup",
               org: "Indian Medical Association"
             },
             {
-              icon: "fas fa-certificate",
+              icon: <ClipboardCheck />,
               title: "Excellence in Patient Care",
               org: "National Health Technology"
             }
           ].map((award, index) => (
             <div key={index} className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className={`${award.icon} text-2xl`}></i>
+                <span>{award.icon}</span>
               </div>
               <h3 className="text-lg font-bold mb-2">{award.title}</h3>
               <p className="text-sm opacity-75">{award.org}</p>
@@ -414,7 +415,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-phone text-2xl"></i>
+              <Phone />
             </div>
             <h3 className="text-xl font-bold mb-2">Patient Support</h3>
             <p className="text-gray-300">1800-XXX-CARE</p>
@@ -423,7 +424,7 @@ export default function About() {
 
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-user-md text-2xl"></i>
+              <User />
             </div>
             <h3 className="text-xl font-bold mb-2">Doctor Support</h3>
             <p className="text-gray-300">1800-XXX-DOCS</p>
@@ -432,7 +433,7 @@ export default function About() {
 
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-envelope text-2xl"></i>
+              <MailCheck />
             </div>
             <h3 className="text-xl font-bold mb-2">Email Support</h3>
             <p className="text-gray-300">support@mediverse.in</p>
@@ -441,7 +442,7 @@ export default function About() {
 
           <div className="text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-handshake text-2xl"></i>
+              <Handshake />
             </div>
             <h3 className="text-xl font-bold mb-2">Partnerships</h3>
             <p className="text-gray-300">partners@mediverse.in</p>
