@@ -2,7 +2,8 @@
 import { React, useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, LogIn } from "lucide-react";
+import { ArrowLeft, Coins, HandCoins, LogIn } from "lucide-react";
+import { toast } from "react-toastify";
 
 const states = ["Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]
 
@@ -110,10 +111,10 @@ export default function PharmacistSignUp() {
         const response = await fetch("/api/pharmaregister", requstOptions)
         const result = await response.json()
         if (result.success) {
-            alert("Pharmacist registered successfully")
+            toast.success("Pharmacist registered successfully")
             router.push("/pharmacist-login")
         } else {
-            alert("Error: " + result.message)
+            toast.error(result.message)
         }
         setIsLoading(false)
     }
@@ -325,7 +326,7 @@ export default function PharmacistSignUp() {
                         {/* Commission Info */}
                         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
                             <h4 className="font-bold text-purple-800 mb-2 flex items-center">
-                                <i className="fas fa-coins mr-2"></i>
+                                <HandCoins />
                                 Commission Structure
                             </h4>
                             <p className="text-purple-700 text-sm mb-2">

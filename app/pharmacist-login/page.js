@@ -3,6 +3,7 @@ import {React, useState, useMemo} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, LogIn } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function DoctorLogin() {
 
@@ -53,10 +54,10 @@ export default function DoctorLogin() {
     const response = await fetch("/api/auth/pharmalogin", requestOptions)
     const result = await response.json()
     if (result.success) {
-      alert("Pharmacist login successfully")
+      toast.success("Pharmacist login successfully")
       router.push("/pharmacist-dashboard")
     } else {
-      alert("Error:" + result.message)
+      toast.error(result.message)
     }
     setIsLoading(false)
   }

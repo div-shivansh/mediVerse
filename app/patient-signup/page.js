@@ -3,6 +3,7 @@ import { React, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { MoveLeft, UserPlus } from "lucide-react";
+import { toast } from "react-toastify";
 
 
 const states = ["Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"]
@@ -90,10 +91,10 @@ export default function PatientSignUp() {
     const response = await fetch("/api/patientregister", requstOptions)
     const result = await response.json()
     if (result.success) {
-      alert("Patient registered successfully")
+      toast.success("Patient registered successfully")
       router.push("/patient-login")
     } else {
-      alert("Error: " + result.message)
+      toast.error(result.message)
     }
     setIsLoading(false)
   }

@@ -3,6 +3,7 @@ import { React, useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, GraduationCap, MoveLeft } from "lucide-react";
+import { toast } from "react-toastify";
 
 const languages = ["Hindi", "English", "Tamil", "Telugu", "Kannada", "Malayalam", "Gujarati", "Marathi", "Bengali", "Punjabi", "Odia", "Assamese"];
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -124,10 +125,10 @@ export default function DoctorSignUp() {
     const response = await fetch("/api/docregister", requstOptions)
     const result = await response.json()
     if (result.success) {
-      alert("Doctor registered successfully")
+      toast.success("Doctor registered successfully")
       router.push("/doctor-login")
     } else {
-      alert("Error: " + result.message)
+      toast.error("Error: " + result.message)
     }
     setIsLoading(false)
   }
