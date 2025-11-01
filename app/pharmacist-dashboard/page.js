@@ -229,7 +229,7 @@ export default function MedicalStoreDashboard() {
               </p>
               <div className="mt-4 flex gap-4">
                 <div className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/30">
-                  <p className="text-xs text-blue-100">Today's Registrations</p>
+                  <p className="text-xs text-blue-100">Today&apos;s Registrations</p>
                   <p className="text-2xl font-bold">{patients.filter(p => p.status === 'pending').length}</p>
                 </div>
               </div>
