@@ -2,7 +2,7 @@
 import {React, useState, useMemo} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, LogIn, MoveLeft } from "lucide-react";
+import { ArrowLeft, LogIn } from "lucide-react";
 
 export default function DoctorLogin() {
 
@@ -50,11 +50,11 @@ export default function DoctorLogin() {
       redirect: "follow"
     };
 
-    const response = await fetch("/api/auth/doclogin", requestOptions)
+    const response = await fetch("/api/auth/pharmalogin", requestOptions)
     const result = await response.json()
     if (result.success) {
-      alert("Doctor login successfully")
-      router.push("/doctor-dashboard")
+      alert("Pharmacist login successfully")
+      router.push("/pharmacist-dashboard")
     } else {
       alert("Error:" + result.message)
     }
@@ -70,8 +70,8 @@ export default function DoctorLogin() {
         <Link href={"/"} className="flex items-center gap-1 text-blue-600 cursor-pointer mb-5 text-sm font-medium">
           <ArrowLeft /> Back
         </Link>
-        <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Doctor Login</h2>
-        <p className="text-center text-gray-600 mb-10 text-lg">Access your doctor dashboard</p>
+        <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Pharmacist Login</h2>
+        <p className="text-center text-gray-600 mb-10 text-lg">Access your Pharmacist dashboard</p>
         
         <form onSubmit={submit} >
           <div className="mb-6">
@@ -118,7 +118,7 @@ export default function DoctorLogin() {
         </form>
         
         <div className="text-center mt-5">
-          Not registered yet? <Link href="/doctor-signup" className="text-blue-600">Register as Doctor</Link>
+          Not registered yet? <Link href="/pharmacist-signup" className="text-blue-600">Register as Pharmacist</Link>
         </div>
       </div>
     </div>

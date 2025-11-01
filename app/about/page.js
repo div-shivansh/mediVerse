@@ -1,6 +1,6 @@
-import { Award, BriefcaseMedical, ClipboardCheck, Clock, Globe2, Globe2Icon, Handshake, Laptop, Lightbulb, MailCheck, Map, MapPinMinus, MapPinned, Medal, Phone, Rocket, ShieldCheck, Smartphone, Star, Stethoscope, Tablet, TabletSmartphone, ThumbsUp, Trophy, User, Users, Webcam } from "lucide-react";
+import { Award, BrainCircuit, BriefcaseMedical, Check, ClipboardCheck, Clock, Facebook, Globe2, Globe2Icon, HandHeart, Handshake, Instagram, Laptop, LaptopMinimalCheck, Lightbulb, Linkedin, MailCheck, Map, MapPinMinus, MapPinned, Medal, Phone, Rocket, ShieldCheck, Smartphone, Star, Stethoscope, Tablet, TabletSmartphone, ThumbsUp, Trophy, Twitter, User, Users, Webcam } from "lucide-react";
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
     return (
@@ -17,8 +17,8 @@ export default function About() {
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-95 leading-relaxed">
             India&apos;s premier telemedicine platform dedicated to bridging the healthcare gap between urban medical expertise and rural communities.
           </p>
-          <div className="inline-flex items-center bg-white/20 backdrop-blur-md rounded-full py-3 px-8 border border-white/30">
-            <i className="fas fa-heart text-red-400 mr-3 text-lg"></i>
+          <div className="inline-flex items-center bg-white/20 gap-3 backdrop-blur-md rounded-full py-3 px-8 border border-white/30">
+            <HandHeart size={32} />
             <span className="font-semibold text-lg">Where Healthcare Meets Heart</span>
           </div>
         </div>
@@ -288,8 +288,8 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i className="fas fa-desktop mr-3 text-blue-600"></i>
+              <h3 className="text-2xl font-bold gap-3 text-gray-800 mb-6 flex items-center">
+                <LaptopMinimalCheck  size={32} />
                 Advanced Telemedicine Platform
               </h3>
               <div className="space-y-4">
@@ -299,8 +299,8 @@ export default function About() {
                   "Health Records Management with secure cloud storage",
                   "Multi-Device Compatibility across all platforms"
                 ].map((feature, index) => (
-                  <div key={index} className="flex items-start">
-                    <i className="fas fa-check text-green-500 mr-3 mt-1"></i>
+                  <div key={index} className="flex gap-3 items-start">
+                    <Check className="text-green-500 mt-1" />
                     <span className="text-gray-600">{feature}</span>
                   </div>
                 ))}
@@ -308,8 +308,8 @@ export default function About() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i className="fas fa-brain mr-3 text-teal-600"></i>
+              <h3 className="text-2xl font-bold gap-3 text-gray-800 mb-6 flex items-center">
+                <BrainCircuit size={32} />
                 Smart Healthcare Features
               </h3>
               <div className="space-y-4">
@@ -319,8 +319,8 @@ export default function About() {
                   "Payment Integration with multiple options",
                   "Follow-up Care Management for continuous monitoring"
                 ].map((feature, index) => (
-                  <div key={index} className="flex items-start">
-                    <i className="fas fa-check text-green-500 mr-3 mt-1"></i>
+                  <div key={index} className="flex gap-3 items-start">
+                    <Check className="text-green-500 mt-1" />
                     <span className="text-gray-600">{feature}</span>
                   </div>
                 ))}
@@ -452,18 +452,18 @@ export default function About() {
 
         <div className="mt-16 pt-8 border-t border-gray-700 text-center">
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
-              <i className="fab fa-linkedin text-2xl"></i>
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
-              <i className="fab fa-twitter text-2xl"></i>
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
-              <i className="fab fa-facebook text-2xl"></i>
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">
-              <i className="fab fa-instagram text-2xl"></i>
-            </a>
+            <Link href="https://www.linkedin.com" target="_blank" className="text-gray-300 hover:text-white transition-colors">
+              <Linkedin size={32} />
+            </Link>
+            <Link href="https://www.x.com" target="_blank" className="text-gray-300 hover:text-white transition-colors">
+              <Twitter size={32} />
+            </Link>
+            <Link href="https://www.facebook.com" target="_blank" className="text-gray-300 hover:text-white transition-colors">
+              <Facebook size={32} />
+            </Link>
+            <Link href="https://www.instagram.com/div.shivansh" target="_blank" className="text-gray-300 hover:text-white transition-colors">
+              <Instagram size={32} />
+            </Link>
           </div>
           <p className="text-gray-400 text-lg font-semibold">
             MediVerse - Where Healthcare Meets Heart

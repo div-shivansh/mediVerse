@@ -2,7 +2,7 @@
 import { React, useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { GraduationCap, MoveLeft } from "lucide-react";
+import { ArrowLeft, GraduationCap, MoveLeft } from "lucide-react";
 
 const languages = ["Hindi", "English", "Tamil", "Telugu", "Kannada", "Malayalam", "Gujarati", "Marathi", "Bengali", "Punjabi", "Odia", "Assamese"];
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -113,7 +113,7 @@ export default function DoctorSignUp() {
     const raw = JSON.stringify({
       license, name, email, degree, specialization, experience, password, fees, phone, location, affiliation, spokenLanguage, availability, bio
     })
-    
+
     const requstOptions = {
       method: "POST",
       headers: myHeaders,
@@ -136,9 +136,9 @@ export default function DoctorSignUp() {
     <div className="block min-h-screen">
       <div className="flex justify-center items-center min-h-screen bg-gray-50 py-5">
         <div className="bg-white py-12 mt-22 px-10 rounded-2xl shadow-xl w-full max-w-4xl border border-gray-200">
-          <button className="flex items-center gap-2 text-blue-600 cursor-pointer mb-5 text-sm font-medium">
-            <MoveLeft /> Back
-          </button>
+          <Link href={"/"} className="flex items-center gap-1 text-blue-600 cursor-pointer mb-5 text-sm font-medium">
+            <ArrowLeft /> Back
+          </Link>
           <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Doctor Registration</h2>
           <p className="text-center text-gray-600 mb-10 text-lg">Join India&apos;s most trusted telemedicine platform</p>
 
@@ -369,17 +369,6 @@ export default function DoctorSignUp() {
 
           <div className="text-center mt-5">
             Already have an account? <Link href="/doctor-login" className="text-blue-600">Login as Doctor</Link>
-          </div>
-
-          {/* Verification Status Box */}
-          <div className="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg hidden">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-              <span className="font-semibold text-blue-800">NMC Verification in Progress</span>
-            </div>
-            <p className="text-blue-700 text-sm">
-              We are verifying your credentials with the National Medical Commission database. This usually takes 2-3 minutes.
-            </p>
           </div>
         </div>
       </div>

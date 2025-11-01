@@ -1,23 +1,61 @@
+"use client"
+import { LogOut } from "lucide-react";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function PatientDashboard() {
+
+  const router = useRouter()
+
+  const handleLogout = async () => {
+  try {
+    const res = await fetch("/api/auth/logout", {
+      method: "POST",
+    });
+
+    if (res.ok) {
+      alert("You have been logged out successfully!");
+      router.push("/")
+    } else {
+      alert("Logout failed. Try again!");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong during logout.");
+  }
+};
+
+
     return (
   <div className="block min-h-screen">
+          <header className="bg-white shadow-md border-b border-gray-200 sticky top-23 z-50">
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-gray-800">MediVerse</h1>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Patient Portal</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-teal-500 rounded-full flex items-center justify-center text-white font-bold">
+                S
+              </div>
+              <div className="hidden sm:block">
+                <div className="font-semibold text-gray-800">Shivansh Tiwari</div>
+                <div className="text-sm text-gray-500">Verified Patient</div>
+              </div>
+            </div>
+            <button onClick={handleLogout} className="py-2.5 px-4 border-none flex items-center justify-center gap-1 rounded-lg cursor-pointer font-medium transition-all duration-300 text-sm bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white">
+              <LogOut />Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+          
     <div className="bg-gray-50 min-h-screen pt-20">
       <div className="bg-white shadow-md py-8 border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-5">
-          <div className="flex justify-between items-center mb-8">
-            <div className="flex items-center gap-2.5 text-blue-600 font-bold text-xl">
-              <i className="fas fa-heartbeat text-2xl text-teal-500"></i>
-              <span>Healthcare Connect</span>
-            </div>
-            <div>
-              <button className="py-3 px-6 border-none rounded-xl cursor-pointer font-semibold transition-all duration-300 no-underline inline-flex items-center gap-2 text-sm relative overflow-hidden bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white hover:-translate-y-0.5">
-                <i className="fas fa-sign-out-alt"></i> Logout
-              </button>
-            </div>
-          </div>
-          
           <div className="text-center">
             <h1 className="text-5xl text-gray-800 mb-4 font-bold">Find Your Perfect Doctor</h1>
             <p className="text-gray-600 text-lg">Browse through our network of 8000+ NMC-verified doctors across 60+ specializations</p>
@@ -33,19 +71,30 @@ export default function PatientDashboard() {
               <input type="text" className="py-3.5 px-4 border-2 border-gray-200 rounded-lg text-base transition-all duration-300 focus:outline-none focus:border-blue-600" placeholder="Search by name or specialization..." />
               <select className="w-full py-3.5 px-4 border-2 border-gray-200 rounded-lg text-base transition-all duration-300 bg-white focus:outline-none focus:border-blue-600">
                 <option value="">All Specializations</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Dermatology">Dermatology</option>
-                <option value="Pediatrics">Pediatrics</option>
-                <option value="Orthopedics">Orthopedics</option>
-                <option value="Neurology">Neurology</option>
-                <option value="Gynecology">Gynecology</option>
+                <option value="General Medicine">General Medicine</option>
+                  <option value="Cardiology">Cardiology</option>
+                  <option value="Dermatology">Dermatology</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                  <option value="Neurology">Neurology</option>
+                  <option value="Gynecology">Gynecology</option>
+                  <option value="Psychiatry">Psychiatry</option>
+                  <option value="General Dentistry">General Dentistry</option>
+                  <option value="Orthodontics">Orthodontics</option>
+                  <option value="Oral Surgery">Oral Surgery</option>
+                  <option value="General Ayurveda">General Ayurveda</option>
+                  <option value="Panchakarma">Panchakarma</option>
+                  <option value="General Homeopathy">General Homeopathy</option>
               </select>
               <select className="w-full py-3.5 px-4 border-2 border-gray-200 rounded-lg text-base transition-all duration-300 bg-white focus:outline-none focus:border-blue-600">
                 <option value="">All Degrees</option>
                 <option value="MBBS">MBBS</option>
-                <option value="MD">MD</option>
-                <option value="BDS">BDS</option>
-                <option value="BAMS">BAMS</option>
+                  <option value="BDS">BDS</option>
+                  <option value="BAMS">BAMS</option>
+                  <option value="BHMS">BHMS</option>
+                  <option value="MD">MD</option>
+                  <option value="MS">MS</option>
+                  <option value="MDS">MDS</option>
               </select>
               <button className="py-3.5 px-5 border-none rounded-xl cursor-pointer font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm bg-gradient-to-r from-blue-600 to-teal-500 text-white shadow-md hover:-translate-y-1 hover:shadow-xl h-[54px]">
                 <i className="fas fa-search"></i> Search

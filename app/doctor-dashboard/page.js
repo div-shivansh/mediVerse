@@ -1,10 +1,34 @@
+"use client"
+import { ArrowRight, LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function DoctorDashboard() {
+
+  const router = useRouter()
+
+    const handleLogout = async () => {
+  try {
+    const res = await fetch("/api/auth/logout", {
+      method: "POST",
+    });
+
+    if (res.ok) {
+      alert("You have been logged out successfully!");
+      router.push("/")
+    } else {
+      alert("Logout failed. Try again!");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong during logout.");
+  }
+};
+
     return (
   <div className="block min-h-screen bg-gray-50">
     {/* Header */}
-    <header className="bg-white shadow-md border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white shadow-md border-b border-gray-200 sticky top-23 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -22,8 +46,8 @@ export default function DoctorDashboard() {
                 <div className="text-sm text-gray-500">Cardiology</div>
               </div>
             </div>
-            <button className="py-2.5 px-4 border-none rounded-lg cursor-pointer font-medium transition-all duration-300 text-sm bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white">
-              <i className="fas fa-sign-out-alt mr-2"></i>Logout
+            <button onClick={handleLogout} className="py-2.5 px-4 border-none flex items-center justify-center gap-1 rounded-lg cursor-pointer font-medium transition-all duration-300 text-sm bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white">
+              <LogOut />Logout
             </button>
           </div>
         </div>
@@ -32,17 +56,17 @@ export default function DoctorDashboard() {
 
     <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Welcome Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-2xl p-8 mb-8">
+      <div className="bg-gradient-to-r mt-20 from-blue-600 to-teal-500 text-white rounded-2xl p-8 mb-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
           <div>
             <h2 className="text-3xl font-bold mb-2">Welcome back, Dr. Rajesh Kumar!</h2>
-            <p className="text-blue-100 mb-4 md:mb-0">Today is Tuesday, October 14, 2025. You have 8 appointments scheduled.</p>
+            <p className="text-blue-100 mb-4 md:mb-0">Today is Saturday, November 01, 2025. You have 8 appointments scheduled.</p>
           </div>
           <div className="flex gap-4">
-            <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 border border-white/30">
+            <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm cursor-pointer text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 border border-white/30">
               <i className="fas fa-calendar-plus mr-2"></i>Set Availability
             </button>
-            <button className="bg-white text-blue-600 hover:bg-gray-50 px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+            <button className="bg-white text-blue-600 hover:bg-gray-50 cursor-pointer px-6 py-3 rounded-xl font-semibold transition-all duration-300">
               <i className="fas fa-video mr-2"></i>Start Consultation
             </button>
           </div>
@@ -131,7 +155,6 @@ export default function DoctorDashboard() {
                   <div className="text-sm text-gray-600 mt-1">Chest pain and shortness of breath</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-green-600 font-semibold">₹800</div>
                   <button className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-all duration-300">
                     <i className="fas fa-video mr-2"></i>Join
                   </button>
@@ -152,9 +175,8 @@ export default function DoctorDashboard() {
                   <div className="text-sm text-gray-600 mt-1">Hypertension follow-up checkup</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-green-600 font-semibold">₹500</div>
                   <button className="mt-2 bg-gray-400 text-white px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed">
-                    Waiting
+                    Scheduled
                   </button>
                 </div>
               </div>
@@ -173,7 +195,6 @@ export default function DoctorDashboard() {
                   <div className="text-sm text-gray-600 mt-1">Diabetes management consultation</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-green-600 font-semibold">₹600</div>
                   <button className="mt-2 bg-gray-400 text-white px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed">
                     Scheduled
                   </button>
@@ -182,8 +203,8 @@ export default function DoctorDashboard() {
             </div>
 
             <div className="mt-6 text-center">
-              <button className="text-blue-600 hover:text-blue-700 font-medium">
-                View All 8 Appointments <i className="fas fa-arrow-right ml-2"></i>
+              <button className="text-blue-600 hover:text-blue-700 flex items-center justify-center w-full gap-2 cursor-pointer font-medium">
+                View All 8 Appointments <ArrowRight />
               </button>
             </div>
           </div>
