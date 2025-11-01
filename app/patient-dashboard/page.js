@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import PatientDashboardClient from "./patientDashboardClient";
+import PatientDashboardClient from "./patientDashboardClient.js";
 
 export default function PatientDashboardPage() {
   return (
