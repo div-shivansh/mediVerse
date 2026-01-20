@@ -13,7 +13,7 @@ export default function Selection() {
         </button>
         </Link>
         <h2 className="text-4xl mb-2.5 text-center text-gray-800 font-bold">Choose Your Role</h2>
-        <p className="text-center text-gray-600 mb-10 text-lg">Select how you want to use MediVerse</p>
+        <p className="text-center text-gray-600 mb-10 text-lg">Select how you want to use MedVix</p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
           <div className="bg-gray-50 py-10 px-8 rounded-2xl border-2 border-gray-200 text-center cursor-pointer transition-all duration-300 relative overflow-hidden hover:border-blue-600 hover:-translate-y-1 hover:shadow-lg before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-gradient-to-r before:from-blue-600 before:to-teal-500 before:-translate-x-full before:transition-transform before:duration-300 hover:before:translate-x-0">
