@@ -165,7 +165,7 @@ export default function PatientDashboardClient() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <h1 className="text-2xl font-bold text-gray-800">MediVerse</h1>
+              <h1 className="text-2xl font-bold text-gray-800">MedVix</h1>
               <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Patient Portal</span>
             </div>
             <div className="flex items-center gap-4">

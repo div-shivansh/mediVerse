@@ -12,7 +12,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-5 relative z-10">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-md">
-            About MediVerse
+            About MedVix
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-95 leading-relaxed">
             India&apos;s premier telemedicine platform dedicated to bridging the healthcare gap between urban medical expertise and rural communities.
@@ -335,7 +335,7 @@ export default function About() {
               </div>
               <h4 className="text-2xl font-bold text-gray-800 mb-4">Multi-Platform Access</h4>
               <p className="text-gray-600 mb-6">
-                Access MediVerse seamlessly across smartphones, tablets, and computers with synchronized data and consistent experience.
+                Access MedVix seamlessly across smartphones, tablets, and computers with synchronized data and consistent experience.
               </p>
               <div className="grid grid-cols-3 gap-4">
                 <div className="flex flex-col items-center justify-center gap-2">
@@ -408,7 +408,7 @@ export default function About() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to join the MediVerse family? Contact us today
+            Ready to join the MedVix family? Contact us today
           </p>
         </div>
 
@@ -436,8 +436,8 @@ export default function About() {
               <MailCheck />
             </div>
             <h3 className="text-xl font-bold mb-2">Email Support</h3>
-            <p className="text-gray-300">support@mediverse.in</p>
-            <p className="text-gray-300">hello@mediverse.in</p>
+            <p className="text-gray-300">support@medvix.in</p>
+            <p className="text-gray-300">hello@medvix.in</p>
           </div>
 
           <div className="text-center">
@@ -445,8 +445,8 @@ export default function About() {
               <Handshake />
             </div>
             <h3 className="text-xl font-bold mb-2">Partnerships</h3>
-            <p className="text-gray-300">partners@mediverse.in</p>
-            <p className="text-gray-300">business@mediverse.in</p>
+            <p className="text-gray-300">partners@medvix.in</p>
+            <p className="text-gray-300">business@medvix.in</p>
           </div>
         </div>
 
@@ -466,7 +466,7 @@ export default function About() {
             </Link>
           </div>
           <p className="text-gray-400 text-lg font-semibold">
-            MediVerse - Where Healthcare Meets Heart
+            MedVix - Where Healthcare Meets Heart
           </p>
           <p className="text-gray-500 italic">
             Transforming lives, one consultation at a time.

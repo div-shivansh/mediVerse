@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "MediVerse",
+  title: "MedVix - AI-Powered Healthcare Solutions",
   description: "Revolutionizing Healthcare with digital solutions powerded by AI",
 };
 
